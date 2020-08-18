@@ -1,7 +1,44 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <img src="../public/assets/images/burger.png" alt="">
+
+    <div>
+        <img src="/assets/images/burger.png" alt="">
+    </div>
+    <h1>Eat-Da-Burger!</h1>
+    <div class="burgerListContainer">
+        <div class="eatList">
+            <ul>
+                {{#each burgersToEat}}
+                    <li>
+                        <span>{{this.id}}. {{this.burger_name}}</span> <button class="devour" data-burgerid="{{id}}">Devour it!</button>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="devourList">
+            <ul>
+                {{#each burgersDevoured}}
+                    <li>
+                        <span>{{this.id}}. {{this.burger_name}}</span>
+                    </li>
+                {{/each}}
+            </ul>
         </div>
     </div>
+
+    <form method="POST">
+        <textarea name="name"></textarea>
+        <button>Submit</button>
+    </form>
+    <p>Enter a burger you want to eat then Click the "Submit" button</p>
 </div>
+<script>
+    document.querySelectorAll('.devour').forEach(element =>{
+        console.log(element)
+        element.addEventListener('click', async function() {
+            const id = this.dataset.burgerid;
+            console.log(id)
+            const response = await fetch(`/${id}`, {method: 'PUT'})
+            location.reload();
+        })
+    })
+</script>
