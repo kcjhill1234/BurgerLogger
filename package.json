@@ -8,10 +8,9 @@
   },
   "scripts": {
     "test": "node test.js",
-    "start": "nodemon server.js"
-  
+    "start": "if-env NODE_ENV=production && node server.js || nodemon server.js"
   },
-  "nodemonConfig":{
+  "nodemonConfig": {
     "ext": "js,json,handlebars"
   },
   "repository": {
@@ -29,6 +28,7 @@
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "if-env": "^1.0.4",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
