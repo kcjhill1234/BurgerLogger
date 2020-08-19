@@ -2,15 +2,13 @@
   "name": "BurgerLogger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": "14.0.0"
   },
   "scripts": {
     "test": "node test.js",
-    "start": "nodemon server.js",
-    "build": "ng build",
-  "heroku-postbuild": "npm run build" 
+    "start": "nodemon server.js"
   
   },
   "nodemonConfig":{
