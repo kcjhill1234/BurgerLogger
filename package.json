@@ -26,7 +26,7 @@
   "homepage": "https://github.com/kcjhill1234/BurgerLogger#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^5.1.0",
     "if-env": "^1.0.4",
     "mysql": "^2.18.1"
